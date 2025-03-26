@@ -34,8 +34,8 @@ kb.add(KeyboardButton("FAQ"))
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    await message.answer("Концепт: ВОЗВРАЩАЙСЯ!
-Ты здесь, чтобы захотеть вернуться.
+     await message.answer("Концепт: ВОЗВРАЩАЙСЯ!\n 
+Ты здесь, чтобы захотеть вернуться.\n
 Выбери:", reply_markup=kb)
 
 @dp.message_handler(Text(equals="О концепте"))
