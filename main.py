@@ -61,7 +61,7 @@ async def quiz_q1(message: types.Message, state: FSMContext):
 @dp.message_handler(state=Quiz.q2)
 async def quiz_result(message: types.Message, state: FSMContext):
     await state.finish()
-    await message.answer("Тебе близок концепт «Возвращайся!»
+    await message.answer("Тебе близок концепт «Возвращайся!»"
 "Хочешь материалы — нажми «Купить доступ».")
 
 @dp.message_handler(Text(equals="Структура пакета"))
