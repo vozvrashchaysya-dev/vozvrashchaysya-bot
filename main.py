@@ -45,24 +45,24 @@ async def about(message: types.Message):
 @dp.message_handler(Text(equals="Пройти мини-тест"))
 async def quiz_start(message: types.Message):
     await Quiz.q1.set()
-    await message.answer("1/2: Что ты хочешь оставить после себя?
-— Свободу
-— Память
-— Желание вернуться")
+    await message.answer("1/2: Что ты хочешь оставить после себя?"
+"— Свободу"
+"— Память"
+"— Желание вернуться")
 
 @dp.message_handler(state=Quiz.q1)
 async def quiz_q1(message: types.Message, state: FSMContext):
     await Quiz.q2.set()
-    await message.answer("2/2: Когда ты хочешь вернуться?
-— Когда тебя не держат
-— Когда остался след
-— Когда звучал собой")
+    await message.answer("2/2: Когда ты хочешь вернуться?"
+"— Когда тебя не держат"
+"— Когда остался след"
+"— Когда звучал собой")
 
 @dp.message_handler(state=Quiz.q2)
 async def quiz_result(message: types.Message, state: FSMContext):
     await state.finish()
     await message.answer("Тебе близок концепт «Возвращайся!»
-Хочешь материалы — нажми «Купить доступ».")
+"Хочешь материалы — нажми «Купить доступ».")
 
 @dp.message_handler(Text(equals="Структура пакета"))
 async def structure(message: types.Message):
